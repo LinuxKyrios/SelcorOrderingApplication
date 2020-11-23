@@ -5,8 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
     tools:context="com.linuxkyrios.selcororderingapp.MainActivity" >
+
+    <include
+        layout="@layout/toolbar_main"
+        android:id="@+id/toolbar" />
 
     <TextView
         android:layout_width="wrap_content"
