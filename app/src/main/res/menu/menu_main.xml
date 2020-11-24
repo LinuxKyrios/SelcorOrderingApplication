@@ -7,5 +7,12 @@
         android:icon="@drawable/grayplusfill"
         android:orderInCategory="1"
         app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/action_share"
+        android:title="@string/action_share"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom"
+        app:actionProviderClass="androidx.appcompat.widget.ShareActionProvider" />
 </menu>
 <!--This item element defines action-->
+<!--Created element for content sharing by using share action provider-->

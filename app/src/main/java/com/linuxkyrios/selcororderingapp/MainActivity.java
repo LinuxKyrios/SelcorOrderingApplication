@@ -1,7 +1,9 @@
 package com.linuxkyrios.selcororderingapp;
 
+import androidx.appcompat.widget.ShareActionProvider;
 import androidx.appcompat.widget.Toolbar; //Necessary class to use toolbar in app
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import android.view.MenuItem;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    private ShareActionProvider shareActionProvider;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +29,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         //Using container menu file and Menu object, which is reference to menu container file/
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem menuItem = menu.findItem(R.id.action_share);
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+        setShareActionIntent("Zobacz jakie zakupy zrobiłem w Selcorze");
         return super.onCreateOptionsMenu(menu);
+    }
+
+    private void setShareActionIntent(String text) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_TEXT, text);
+        shareActionProvider.setShareIntent(intent);
     }
 
     @Override
