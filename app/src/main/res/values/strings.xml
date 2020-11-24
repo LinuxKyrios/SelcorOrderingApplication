@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Selcor Ordering App</string>
+    <string name="create_order">Złóż zamówienie</string>
+    <string name="create_order_title">Złóż zamówienie</string>
 </resources>
