@@ -3,4 +3,10 @@
     <string name="create_order">Złóż zamówienie</string>
     <string name="create_order_title">Złóż zamówienie</string>
     <string name="action_share">Udostępnij</string>
+    <string-array name="options">
+        <item>Długopisy</item>
+        <item>Koperty</item>
+        <item>Papier ksero</item>
+    </string-array>
+    <string name="selcor_logo">Logo firmy Selcor</string>
 </resources>

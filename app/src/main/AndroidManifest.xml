@@ -9,13 +9,18 @@
         android:roundIcon="@mipmap/selcorlogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrderActivity"
+        <activity
+            android:name=".PenActivity"
+            android:parentActivityName=".PenCategoryActivity" />
+        <activity android:name=".PenCategoryActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".OrderActivity"
             android:label="@string/create_order"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT.ACTIVITY"
                 android:value=".MainActivity" />
-
         </activity>
         <activity android:name=".MainActivity">
             <intent-filter>

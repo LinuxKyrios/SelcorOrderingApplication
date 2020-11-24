@@ -9,6 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +25,22 @@ public class MainActivity extends AppCompatActivity {
         // Downloading reference to toolbar, and setting it as activity bar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        //Creating listener object
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> listView, //implementing onItemClick method
+                                    View itemView,
+                                    int position,
+                                    long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(MainActivity.this, PenCategoryActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+        //Adding listener object to list view
+        ListView listView = (ListView) findViewById(R.id.list_options);
+        listView.setOnItemClickListener(itemClickListener);
     }
 
     @Override
